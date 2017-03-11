@@ -4,7 +4,7 @@
 module.exports = {
     mysql: {
         connectionLimit:10,//连接池最多可以创建连接数
-        host: '127.0.0.1',
+        host: 'http://103.212.32.69',
         user: 'root',
         password: '245444',
         database:'news', // 前面建的user表位于这个数据库中
