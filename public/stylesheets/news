@@ -1,0 +1,190 @@
+@header-height: 48px;
+@nav-height: 80px;
+@base-color: #3E98F0;
+@min-width: 400px;
+@min-height: 639px;
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: arial;
+}
+html {
+  font-size: 50px;
+}
+body {
+  font-size: 14px;
+}
+
+header {
+  height: @header-height;
+  line-height: @header-height;
+  text-align: center;
+  border-bottom: 1px solid #5dabf0;
+  background: @base-color;
+  img {
+    height: 60%;
+    vertical-align: middle
+  }
+  div {
+    height: 48px;
+    a {
+      display: inline-block;
+      width: 34px;
+      height: 100%;
+      text-decoration: underline;
+      background: url(../imgs/icon-bg.png) no-repeat 50% 0;
+      background-size: 40px 500px;
+    }
+    &:nth-child(1) {
+      float: left;
+      a {
+        margin-left: 8px;
+        &:nth-child(1) {
+
+          background-position-y: 6px;
+        }
+        &:nth-child(2) {
+          background-position-y: -460px;
+        }
+      }
+    }
+    &:last-child {
+      float: right;
+      a {
+        margin-right: 8px;
+        &:nth-child(1) {
+          background-position-y: -160px;
+        }
+        &:nth-child(2) {
+          background-position-y: -105px;
+        }
+      }
+    }
+  }
+
+}
+
+nav {
+  text-align: center;
+  vertical-align: middle;
+  height: @nav-height;
+  background-color: @base-color;
+  ul {
+    height: @nav-height;
+    li {
+      float: left;
+      width: 16.666%;
+      height: 40px;
+      list-style: none;
+      &:nth-last-child(3) {
+        width: 33.333%;
+      }
+      &:last-child {
+        background: url(../imgs/down.png) no-repeat 49px 50%;
+        background-size: 10px;
+        vertical-align: center;
+        a {
+          padding-right: 6px;
+        }
+      }
+
+      a {
+        display: block;
+        color: #fff;
+        line-height: 40px;
+        text-decoration: none;
+      }
+    }
+  }
+
+}
+main {
+  margin-top: 10px;
+  section {
+    position: relative;
+    .clearfix();
+    margin: 0 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #aaaaaa;
+    .m_article_img {
+      background-color: #009926;
+      float: left;
+      width: 27%;
+      height: 1.4rem;
+      overflow: hidden;
+      position: relative;
+      margin-right: .2rem;
+      img {
+        width: 100%;
+        display: block;
+        min-height: 1.4rem;
+      }
+    }
+    .cot {
+
+      padding-left: 105px;
+    }
+    .title {
+      font-size: .34rem;
+      margin-bottom: .2rem;
+      color: #404040;
+      line-height: .42rem;
+      width: 100%;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      -webkit-line-break: auto;
+      -webkit-box-orient: vertical;
+    }
+    .other {
+
+    }
+    .time{
+      position: absolute;
+      bottom: 10px;
+      float: left;
+      font-size: .24rem;
+      color: #888;
+    }
+    .see {
+      position: absolute;
+      bottom: 10px;
+      right: 0;
+      float: right;
+      .iconfont {
+        padding: 0 .1rem 0 0;
+        display: inline-block;
+        font-size: .28rem;
+        color: #a8a8a8;
+        font-family: "iconfont" !important;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: .2px;
+      }
+    }
+  }
+
+}
+
+@font-face {
+  font-family: 'iconfont';
+  src:  url('../fonts/fontawesome-webfont.eot?snsrp8');
+  src:  url('../fonts/fontawesome-webfont.eot?snsrp8#iefix') format('embedded-opentype'),
+  url('../fonts/fontawesome-webfont.ttf?snsrp8') format('truetype'),
+  url('../fonts/fontawesome-webfont.woff?snsrp8') format('woff'),
+  url('../fonts/fontawesome-webfont.svg?snsrp8#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

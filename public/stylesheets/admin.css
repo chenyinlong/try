@@ -1,0 +1,14 @@
+.container {
+  width: 100%;
+}
+.form-group textarea {
+  height: 350px;
+}
+.wangEditor-menu-container .menu-item {
+  height: 20px;
+  width: 30px;
+}
+.newslist-show {
+  height: 553px;
+  overflow-y: scroll;
+}

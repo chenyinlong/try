@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！-->
+    <title>news admin</title>
+    <!-- Bootstrap-->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../wangeditor/css/wangEditor.min.css">
+    <link href="../stylesheets/admin.css" rel="stylesheet" type="text/css">
+    <!--script(src="//cdn.bootcss.com/less.js/3.0.0-pre.4/less.min.js")-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file://-->
+    <!--if lt IE 9
+    script(src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js")
+    script(src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js")
+    -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">新闻编辑</div>
+            <div class="panel-body">
+              <from id="news_from" class="form-group">
+                <label for="newstitle">新闻标题（title）</label>
+                <input id="newstitle" placeholder="新闻标题" class="form-control">
+                <label for="newscont">新闻内容（content）</label>
+                <textarea id="newscont" placeholder="Password" class="form-control"></textarea>
+                <!--form(action="/uploadphotos" method="post" enctype="multipart/form-data")-->
+                <label for="title_img">File input</label>
+                <input id="title_img" type="file" name="photos">
+                <p class="help-block">Example block-level help text here.</p><img src="" class="showimg">
+              </from>
+              <button id="addnews" type="submit" class="btn btn-default"> 提交</button>
+              <button id="updatenews" type="submit" class="btn btn-default hidden"> 修改</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">新闻列表</div>
+            <div class="panel-body newslist-show">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>新闻标题</th>
+                    <th>时间</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
+    <!--script(type="text/javascript" src="../wangeditor/js/lib/jquery-1.10.2.min.js")-->
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../wangeditor/js/wangEditor.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed-->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../javascripts/admin.js"></script>
+  </body>
+</html>

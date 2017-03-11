@@ -1,0 +1,74 @@
+doctype html
+html(lang="zh-CN")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        // 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！
+        title news admin
+        // Bootstrap
+        link(href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet")
+        link(rel="stylesheet" type="text/css" href="../wangeditor/css/wangEditor.min.css")
+        link(href="../stylesheets/admin.css", rel="stylesheet" type="text/css")
+        //script(src="//cdn.bootcss.com/less.js/3.0.0-pre.4/less.min.js")
+        // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+        // WARNING: Respond.js doesn't work if you view the page via file://
+        //if lt IE 9
+          script(src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js")
+          script(src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js")
+    body
+        .container
+            .row
+                .col-lg-6
+                    .panel.panel-default
+                        .panel-heading 新闻编辑
+                        .panel-body
+                            from#news_from.form-group
+                                label(for="newstitle") 新闻标题（title）
+                                input#newstitle.form-control(placeholder="新闻标题")
+
+                                label(for="newscont") 新闻内容（content）
+                                textarea#newscont.form-control(placeholder="Password")
+
+                                //form(action="/uploadphotos" method="post" enctype="multipart/form-data")
+
+                                label(for="title_img") File input
+                                input#title_img(type="file" name="photos")
+                                p.help-block Example block-level help text here.
+                                img.showimg(src='')
+
+
+                            button#addnews.btn.btn-default(type="submit")  提交
+                            button#updatenews.btn.btn-default.hidden(type="submit")  修改
+                            button#qupdatenews.btn.btn-default.hidden(type="submit")  取消
+
+                .col-lg-6
+                    .panel.panel-default
+                        .panel-heading 新闻列表
+                        .panel-body.newslist-show
+                            table.table.table-hover
+                                thead
+                                    tr
+                                        th #
+                                        th 新闻标题
+                                        th 时间
+                                        th 操作
+                                tbody
+                                    -for(var val of newslist)
+                                        tr
+                                            th= val.id
+                                            td= val.title
+                                            td= val.CreateTime
+                                            td
+                                                button.updataNews.btn.btn-primary.btn-xs 点击查看详情
+                                                button.delOneNews.btn.btn-danger.btn-xs 删除
+
+
+        // jQuery (necessary for Bootstrap's JavaScript plugins)
+        //script(type="text/javascript" src="../wangeditor/js/lib/jquery-1.10.2.min.js")
+        //script(src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js")
+        //script(type="text/javascript" src="../wangeditor/js/wangEditor.min.js")
+        // Include all compiled plugins (below), or include individual files as needed
+        //script(src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js")
+        //script(type="text/javascript" src="../javascripts/admin.js")
+        script(type="text/javascript" src="../javascripts/require.js" data-main="../javascripts/admin_app.js")
