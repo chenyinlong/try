@@ -81,7 +81,7 @@ NewsAjax.prototype.ajax_f = function (url, data, succallback, errcallback) {
         type: 'post',
         data: data,
         dataType: 'json',
-        url: url,
+        url: 'localhost'+url,
         success: function (data) {
             succallback(data)
         },
