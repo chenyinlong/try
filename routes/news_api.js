@@ -33,21 +33,25 @@ router.post('/addNews2', function(req, res, next) {
     //form.maxFields = 1000;  设置所以文件的大小总和
 
     form.parse(req, function(err, fields, files) {
-        var file=files.file[0];
-        console.log(fields);
-        console.log(files);
-        //同步重命名文件名
-        // fs.renameSync(file.path,file.originalFilename);
-        // res.send(path.basename(file.path));
-        var data=[fields.newstitle[0],fields.newscont[0],"images/"+path.basename(file.path)];
-        console.log(data);
-        userDao.addNews(data,function (err, vals) {
-            if(err){
-                res.render('error', {message:'连接数据库出错',error:err});
-            }else {
-                res.send(vals)
-            }
-        });
+        if (err) {
+          console.log(err);
+        }else {
+          var file=files.file[0];
+          console.log(fields);
+          console.log(files);
+          //同步重命名文件名
+          // fs.renameSync(file.path,file.originalFilename);
+          // res.send(path.basename(file.path));
+          var data=[fields.newstitle[0],fields.newscont[0],"images/"+path.basename(file.path)];
+          console.log(data);
+          userDao.addNews(data,function (err, vals) {
+              if(err){
+                  res.render('error', {message:'连接数据库出错',error:err});
+              }else {
+                  res.send(vals)
+              }
+          });
+        }
     });
 
 });
