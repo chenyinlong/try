@@ -27,7 +27,7 @@ router.post('/addNews2', function(req, res, next) {
     //设置编辑
     // form.encoding = 'utf-8';
     //设置文件存储路径
-    form.uploadDir = "public/images/";
+    // form.uploadDir = "public/images/";
     //设置单文件大小限制
     form.maxFilesSize = 5 * 1024 * 1024;
     //form.maxFields = 1000;  设置所以文件的大小总和
