@@ -26,8 +26,8 @@ router.post('/addNews2', function(req, res, next) {
     var form = new multiparty.Form();
     //设置编辑
     // form.encoding = 'utf-8';
-    //设置文件存储路径
-    form.uploadDir = "./github/try/public/images";
+    //设置文件存储路径path.join(__dirname, 'public/img')
+    form.uploadDir = path.join(__dirname, '../public/img');
     //设置单文件大小限制
     form.maxFilesSize = 5 * 1024 * 1024;
     //form.maxFields = 1000;  设置所以文件的大小总和
